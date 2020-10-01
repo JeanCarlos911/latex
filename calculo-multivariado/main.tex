@@ -1,0 +1,63 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{amssymb, amsmath, amsbsy}
+
+\newcommand{\uveci}{{\bm{\hat{\textnormal{\bfseries\i}}}}}
+\newcommand{\uvecj}{{\bm{\hat{\textnormal{\bfseries\j}}}}}
+\DeclareRobustCommand{\uvec}[1]{{%
+  \ifcsname uvec#1\endcsname
+     \csname uvec#1\endcsname
+   \else
+    \bm{\hat{\mathbf{#1}}}%
+   \fi
+}}
+\newcommand{\tab}[1][1cm]{\hspace*{#1}}
+
+\setlength{\topmargin}{-20mm}
+
+\author{Jean Carlos Santoya Cabrera}
+\begin{document}
+    \title{Ejercicios cálculo multivariado}
+    \maketitle
+    \begin{flushleft}
+        1) Encuentre la función de la posición de la partícula con parámetro t, dados: $\vec{r}(0) = (1, 2, 3)$, $\vec{r}(c) = (4, 1, 4)$,
+         $\|\vec{v}(0)\| = 2$ y $\vec{a}(t) = 3\uvec{i} -\uvec{j} + \uvec{k}$.\\
+        \tab[3.2mm] Solución:\\
+        \text{- Primero hallamos la velocidad inicial:}\\
+        \begin{equation}
+            \uvec{v}_0 = direccion \cdot rapidez
+        \end{equation}
+        \begin{equation}
+            \uvec{v}_0 = \frac{ \Delta \vec{r} }{ \|\Delta \vec{r}\| } \cdot 2
+        \end{equation}
+        \begin{equation}
+            \uvec{v}_0 = (\frac{6}{\sqrt{11}}, -\frac{1}{\sqrt{11}}, \frac{1}{\sqrt{11}})
+        \end{equation}
+
+        \text{- Ahora hallamos la velocidad de la partícula:}\\
+        \begin{equation}
+            \uvec{v}(t) = velocidadInicial + aceleracion \cdot t
+        \end{equation}
+        \begin{equation}
+            \uvec{v}(t) = \uvec{v}_0 + \vec{a} t
+        \end{equation}
+        \begin{equation}
+            \uvec{v}(t) = (\frac{6}{\sqrt{11}} + 3t, -\frac{1}{\sqrt{11}} - t, \frac{1}{\sqrt{11}} + t)
+        \end{equation}
+
+        \text{- Ahora hallamos la posición de la partícula dado t:}\\
+        \begin{equation}
+            \uvec{r}(t) = velocidadInicial + aceleracion \cdot t
+        \end{equation}
+        \begin{equation}
+            \uvec{r}(t) = \uvec{r}_0 + \vec{v} t
+        \end{equation}
+        \begin{equation}
+            \uvec{r}(t) = (\frac{6}{\sqrt{11}}t + 3t^2, -\frac{t}{\sqrt{11}} - t^2, \frac{t}{\sqrt{11}} + t^2)
+        \end{equation}
+    \end{flushleft}
+    
+\end{document}
